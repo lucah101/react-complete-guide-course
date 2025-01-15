@@ -12,12 +12,12 @@ function App() {
     duration: 12,
   });
 
-  function handleChangeNumbers(initialInvestment, annualInvestment, expectedReturn, duration) {
-    setNumbers({
-        initialInvestment, 
-        annualInvestment,
-        expectedReturn, 
-        duration
+  function handleChangeNumbers(identifier, newValue) {
+    setNumbers((prevNumber) => {
+        return {
+          ...prevNumber,
+          [identifier]: newValue,
+        };
     });
   }
 
