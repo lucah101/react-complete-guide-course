@@ -1,16 +1,14 @@
-import {calculateInvestmentResults} from '../util/investment.js'
+import {calculateInvestmentResults, formatter} from '../util/investment.js'
 
 export default function Result({data}) {
-    let annualData = data && Object.keys(data).length > 0
-    ? calculateInvestmentResults({
+    let annualData =calculateInvestmentResults({
         initialInvestment: data.initialInvestment, 
         annualInvestment: data.annualInvestment,
         expectedReturn: data.expectedReturn, 
         duration: data.duration        
-    }) : [];
+    });
 
-    return <div id="result">
-        <table>
+    return <table id="result">
             <thead>
                 <tr>
                     <th>Year</th>
@@ -24,13 +22,12 @@ export default function Result({data}) {
                 {annualData.map((onedata, index) => 
                     <tr key={index}>
                         <td>{onedata.year}</td>
-                        <td>${onedata.valueEndOfYear}</td>
-                        <td>${onedata.interest}</td>
-                        <td>${onedata.totalInterest}</td>
-                        <td>${onedata.investedCapital}</td>
+                        <td>{formatter.format(onedata.valueEndOfYear)}</td>
+                        <td>{formatter.format(onedata.interest)}</td>
+                        <td>{formatter.format(onedata.totalInterest)}</td>
+                        <td>{formatter.format(onedata.investedCapital)}</td>
                     </tr>
                 )}
             </tbody>
-        </table>
-    </div>
+        </table>;
 }

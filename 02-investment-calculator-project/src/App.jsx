@@ -3,7 +3,6 @@ import Result from "./components/Result";
 import { useState } from "react";
 
 
-
 function App() {
   const [numbers, setNumbers] = useState({
     initialInvestment: 15000, 
@@ -16,15 +15,16 @@ function App() {
     setNumbers((prevNumber) => {
         return {
           ...prevNumber,
-          [identifier]: newValue,
+          [identifier]: +newValue,
         };
     });
   }
 
+  const inputIsValid = numbers.duration >= 1 && numbers.initialInvestment > 0 && numbers.annualInvestment > 0 && numbers.expectedReturn > 0;
 
   return <main>
     <UserInput data={numbers} onChangeNumbers={handleChangeNumbers} />
-    <Result data={numbers} />
+    {inputIsValid ? <Result data={numbers} /> : <p className="center">Input is not valid. </p>}
   </main>;
     
 }
