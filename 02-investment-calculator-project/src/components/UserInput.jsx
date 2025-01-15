@@ -35,12 +35,12 @@ export default function UserInput({onChangeNumbers}) {
         <div>
             <label>INITIAL INVESTMENT</label>
             <input type="number" onChange={handleChangeInitial}></input>
-            <label>ANNUAL INVESTMENT</label>
-            <input type="number" onChange={handleChangeAnnual}></input>
-        </div>
-        <div>
             <label>EXPECTED RETURN</label>
             <input type="number" onChange={handleChangeExpected}></input>
+        </div>
+        <div>
+            <label>ANNUAL INVESTMENT</label>
+            <input type="number" onChange={handleChangeAnnual}></input>
             <label>DURATION</label>
             <input type="number" onChange={handleChangeDuration}></input>
         </div>

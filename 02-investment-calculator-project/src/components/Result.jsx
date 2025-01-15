@@ -10,12 +10,6 @@ export default function Result({data}) {
     }) : [];
 
     return <div id="result">
-        <p>
-            {data.initialInvestment} _
-            {data.annualInvestment} _
-            {data.expectedReturn} _
-            {data.duration}
-        </p>
         <table>
             <thead>
                 <tr>
@@ -32,8 +26,8 @@ export default function Result({data}) {
                         <td>{onedata.year}</td>
                         <td>${onedata.valueEndOfYear}</td>
                         <td>${onedata.interest}</td>
-                        <td>${onedata.annualInvestment}</td>
-                        <td>$</td>
+                        <td>${onedata.totalInterest}</td>
+                        <td>${onedata.investedCapital}</td>
                     </tr>
                 )}
             </tbody>
