@@ -5,8 +5,11 @@ export default function Player() {
 
   const playerName = useRef();
 
-  function handleClick() {
-    setEnteredPlayerName(playerName.current.value);
+  function handleClick() {  
+    if (playerName.current.value != ''){
+      setEnteredPlayerName(playerName.current.value);
+      playerName.current.value = '';
+    }
   }
 
   return (
