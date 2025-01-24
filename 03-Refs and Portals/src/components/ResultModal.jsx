@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 export default function ResultModal({ref , result, targetTime}) {
     return (
     <dialog ref={ref} className="result-modal">
