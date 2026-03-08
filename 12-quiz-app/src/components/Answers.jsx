@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-export default function QuestionTimer({answers, selectedAnswer, answerState, onSelect}) {
+export default function Answers({answers, selectedAnswer, answerState, onSelect}) {
     const shuffledAnswers = useRef();
 
      if (!shuffledAnswers.current) {
