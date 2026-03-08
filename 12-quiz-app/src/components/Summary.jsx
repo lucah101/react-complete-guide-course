@@ -46,7 +46,7 @@ export default function Summary({ userAnswers }) {
                             <p className={cssClass}>{answer ?? 'Skipped '}</p>
                         </li>
                     );
-                })};
+                })}
             </ol>
         </div>
     );
